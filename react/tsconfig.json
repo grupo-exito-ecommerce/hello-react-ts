@@ -19,5 +19,9 @@
     "noEmit": true,
     "jsx": "preserve"
   },
-  "include": ["./typings/**/*.d.ts", "./**/*.tsx"]
+  "include": ["./typings/**/*.d.ts", "./**/*.tsx"],
+  "exclude": [
+    "node_modules",
+    "**/*.text.tsx"
+  ]
 }

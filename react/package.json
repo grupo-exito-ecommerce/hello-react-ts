@@ -1,5 +1,5 @@
 {
-  "name": "recipes",
+  "name": "hello-react",
   "version": "0.1.0",
   "dependencies": {
     "@types/jest": "23.3.11",
@@ -14,6 +14,11 @@
     "tslint-config-vtex": "^2.1.0",
     "typescript": "3.2.2"
   },
+  "extends": [
+    "tslint:recommended",
+    "tslint-sonarts"
+  ],
+
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -21,7 +26,10 @@
     "not op_mini all"
   ],
   "scripts": {
+    "coverage": "npm test -- --coverage",
     "test": "react-scripts test",
     "lint": "tsc --noEmit && tslint -c tslint.json './src/**/*.ts'"
+  },
+  "devDependencies": {
   }
 }
