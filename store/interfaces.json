@@ -1,0 +1,7 @@
+{
+  "hello-react": {
+    "allowed": [],
+    "required": [],
+    "component": "App"
+  }
+}

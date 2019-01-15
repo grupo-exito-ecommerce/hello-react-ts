@@ -10,8 +10,10 @@
   },
   "builders": {
     "react": "2.x",
-    "pages": "0.x",
+    "store": "0.x",
     "messages": "0.x"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vtex.store-resources": "0.x"
+  }
 }
