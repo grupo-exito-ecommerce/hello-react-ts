@@ -1,13 +1,12 @@
 import * as React from "react";
 import "../global.css";
-import logo from "./logo.svg";
 
 class App extends React.Component<any, any> {
   public render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2000px-React-icon.svg.png" className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
