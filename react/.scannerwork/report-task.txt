@@ -1,6 +1,0 @@
-projectKey=hello-react-ts
-serverUrl=http://18.213.20.207
-serverVersion=7.1.0.11001
-dashboardUrl=http://18.213.20.207/dashboard/index/hello-react-ts
-ceTaskId=AWg4djX5Tn6TWMCb4JDR
-ceTaskUrl=http://18.213.20.207/api/ce/task?id=AWg4djX5Tn6TWMCb4JDR

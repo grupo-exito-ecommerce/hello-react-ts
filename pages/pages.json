@@ -1,11 +1,11 @@
 {
     "pages": {
-      "recipes": {
+      "hello-react": {
         "path": "/hello-react"
       }
     },
     "extensions": {
-      "recipes": {
+      "hello-react": {
         "component": "App"
       }
     }
