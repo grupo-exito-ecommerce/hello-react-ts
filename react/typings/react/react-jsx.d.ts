@@ -123,6 +123,8 @@ declare module JSX {
     var: React.HTMLAttributes;
     video: React.HTMLAttributes;
     wbr: React.HTMLAttributes;
+    g: React.HTMLAttributes;
+    circle: React.HTMLAttributes;
 
     // SVG
     svg: React.SVGElementAttributes;
