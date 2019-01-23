@@ -19,7 +19,7 @@
   "scripts": {
     "test": "react-scripts test",
     "coverage": "npm test -- --coverage",
-    "sonar-scanner": "coverage && node_modules/sonar-scanner/bin/sonar-scanner",
+    "sonar-scanner": "npm run coverage && node_modules/sonar-scanner/bin/sonar-scanner",
     "lint": "tsc --noEmit && tslint -c tslint.json './src/**/*.ts'"
   },
   "devDependencies": {
