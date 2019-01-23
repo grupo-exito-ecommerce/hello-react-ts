@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel component should match snapshot 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <header
+      class="App-header"
+    >
+      <img
+        alt="logo"
+        class="App-logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2000px-React-icon.svg.png"
+      />
+      <h1
+        class="App-title"
+      >
+        Welcome to React
+      </h1>
+    </header>
+    <p
+      class="App-intro"
+    >
+      To get started, edit 
+      <code>
+        src/App.tsx
+      </code>
+       and save to reload.
+    </p>
+  </div>
+</div>
+`;
