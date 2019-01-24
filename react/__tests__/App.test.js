@@ -1,21 +1,16 @@
 /* eslint-env jest */
-import React from 'react';
-import { render } from 'react-testing-library';
-
-import App from '../App';
-
-describe('Carousel component', () => {
+import React from "react";
+import { shallow, mount } from "enzyme";
+import App from "../App";
+describe("Hello React component", () => {
   let wrapper;
-
   beforeEach(() => {
-    wrapper = render(<App />);
+    wrapper = shallow(<App classes={{}} />);
   });
-
-  it('should be rendered', () => {
+  it("should be rendered", () => {
     expect(wrapper).toBeDefined();
   });
-
-  it('should match snapshot', () => {
-    expect(wrapper.container).toMatchSnapshot();
+  it("should match snapshot", () => {
+    expect(wrapper).toMatchSnapshot();
   });
 });

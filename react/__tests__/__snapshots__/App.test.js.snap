@@ -31,3 +31,33 @@ exports[`Carousel component should match snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`Hello React component should match snapshot 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2000px-React-icon.svg.png"
+    />
+    <h1
+      className="App-title"
+    >
+      Welcome to React
+    </h1>
+  </header>
+  <p
+    className="App-intro"
+  >
+    To get started, edit 
+    <code>
+      src/App.tsx
+    </code>
+     and save to reload.
+  </p>
+</div>
+`;
