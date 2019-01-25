@@ -1,12 +1,12 @@
 {
-  "pages": {
-    "recipes": {
-      "path": "/hello-react"
-    }
-  },
-  "extensions": {
-    "recipes": {
-      "component": "App"
+    "pages": {
+      "hello-react": {
+        "path": "/hello-react"
+      }
+    },
+    "extensions": {
+      "hello-react": {
+        "component": "App"
+      }
     }
   }
-}

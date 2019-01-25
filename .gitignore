@@ -3,3 +3,6 @@ node_modules/
 .eslintrc
 !Icon
 react/node_modules/
+react/coverage
+react/.scannerwork
+react/*-lock.json
