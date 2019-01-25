@@ -1,7 +1,0 @@
-organization=maik3345-github
-projectKey=Maik3345_hello-react-ts
-serverUrl=https://sonarcloud.io
-serverVersion=7.6.0.20657
-dashboardUrl=https://sonarcloud.io/dashboard?id=Maik3345_hello-react-ts
-ceTaskId=AWgzeIaf38w037JbzmOy
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWgzeIaf38w037JbzmOy
