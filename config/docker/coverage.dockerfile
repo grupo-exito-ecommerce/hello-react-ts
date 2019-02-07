@@ -1,3 +1,9 @@
+# Docker file specification
+#################################
+#
+# This docker file, install all sources for puppeteer and run the auto-login config for vtex
+# Before run all commands for the needing proccees
+# 
 FROM node:8-slim
 
 RUN apt-get update && \
@@ -51,11 +57,13 @@ USER pptruser
 ENTRYPOINT ["dumb-init", "--"]
 
 WORKDIR /project
-RUN echo "Start Vtex proccess to publish the current project"
+RUN echo "Start Vtex proccess to link the current project"
 
 RUN echo "Start login proccess, with the auto-login"
 RUN vtex login exito --verbose
-RUN echo "Use the publish command from exito for publish"
-RUN exito publish --verbose
-RUN echo "Finsih proccess, component published"
+RUN echo "Use environment develop to link the current component"
+RUN vtex use develop
+RUN echo "Use the link command from exito"
+RUN exito vtex link all --verbose
+RUN echo "Finsih proccess, component link in the workspace develop"
 

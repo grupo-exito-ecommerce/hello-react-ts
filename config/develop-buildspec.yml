@@ -1,7 +1,0 @@
-version: 0.2
-
-phases:
- build:
-   commands:
-     - echo "Create Docker image for link component in develop workspace..."
-     - docker build --no-cache -t exito-continuos-integration-vtex -f docker/develop.dockerfile .

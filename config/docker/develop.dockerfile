@@ -1,3 +1,9 @@
+# Docker file specification
+#################################
+#
+# This docker file, install all sources for puppeteer and run the auto-login config for vtex
+# Before run all commands for the needing proccees
+# 
 FROM node:8-slim
 
 RUN apt-get update && \
