@@ -4,5 +4,5 @@ phases:
  build:
    commands:
      - echo "Create Docker image for publish component..."
-     - docker build --no-cache -f docker/master.dockerfile .
+     - docker build --no-cache -f config/docker/master.dockerfile .
      - echo "Porccess finished."

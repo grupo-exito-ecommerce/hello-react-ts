@@ -60,6 +60,8 @@
       "\\.(css|less|scss)$": "identity-obj-proxy"
     },
     "testURL": "http://localhost/",
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

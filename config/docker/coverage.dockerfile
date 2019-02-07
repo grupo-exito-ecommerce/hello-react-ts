@@ -60,10 +60,7 @@ WORKDIR /project
 RUN echo "Start Vtex proccess to link the current project"
 
 RUN echo "Start login proccess, with the auto-login"
-RUN vtex login exito --verbose
-RUN echo "Use environment develop to link the current component"
-RUN vtex use develop
-RUN echo "Use the link command from exito"
-RUN exito vtex link all --verbose
-RUN echo "Finsih proccess, component link in the workspace develop"
+RUN cd react
+RUN yarn
+RUN yarn run sonar-scanner
 

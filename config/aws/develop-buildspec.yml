@@ -4,5 +4,5 @@ phases:
  build:
    commands:
      - echo "Create Docker image for link component in develop workspace..."
-     - docker build --no-cache -f docker/develop.dockerfile .
+     - docker build --no-cache -f config/docker/develop.dockerfile .
      - echo "Porccess finished."

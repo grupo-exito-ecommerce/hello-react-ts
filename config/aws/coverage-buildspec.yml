@@ -4,5 +4,5 @@ phases:
  build:
    commands:
      - echo "Create Docker image validate code coverage..."
-     - docker build --no-cache -f docker/coverage.dockerfile .
+     - docker build --no-cache -f config/docker/coverage.dockerfile .
      - echo "Porccess finished."
