@@ -23,7 +23,7 @@ Los recursos necesarios para el proceso de sonarQube son los siguientes
 |--- sonar-project.properties
 ```
 
-`sonar-project.properties`: Este archivo posee la configuración necesaria para subir el coverage generado por Jest.
+`sonar-project.properties`: Este archivo posee la configuración necesaria para subir el coverage generado por Jest, debemos de copiar este archivo en el directorio `react/`
 
 #### `config/docker`
 
