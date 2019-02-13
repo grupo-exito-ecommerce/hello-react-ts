@@ -15,6 +15,16 @@ Estructura de los recursos necesarios para el proceso de integración continua d
 ```
 ## Uso
 
+#### `config/sonar`
+
+Los recursos necesarios para el proceso de sonarQube son los siguientes
+```
+|-- sonar
+|--- sonar-project.properties
+```
+
+`sonar-project.properties`: Este archivo posee la configuración necesaria para subir el coverage generado por Jest.
+
 #### `config/docker`
 
 Los recursos necesarios para el proceso de docker son los siguientes
