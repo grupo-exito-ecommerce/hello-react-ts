@@ -1,18 +1,19 @@
 {
   "name": "hello-react",
   "vendor": "exito",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "vtex-version": "0.0.0",
+  "builders": {
+    "react": "3.x",
+    "styles": "1.x",
+    "store": "0.x",
+    "messages": "1.x"
+  },
   "title": "Hello React",
   "description": "App for creating a minimal React setup for VTEX IO",
   "defaultLocale": "es-CO",
   "scripts": {
     "prereleasy": "bash lint"
   },
-  "builders": {
-    "react": "2.x",
-    "pages": "0.x",
-    "messages": "0.x"
-  },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
