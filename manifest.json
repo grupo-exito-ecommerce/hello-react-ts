@@ -1,7 +1,7 @@
 {
     "name": "hello-react",
     "vendor": "exito",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "vtex-version": "0.0.0",
     "builders": {
         "react": "3.x",
