@@ -1,8 +1,24 @@
 version: 0.2
 # This file only run the docker file from the indicate folder
 phases:
- build:
-   commands:
-     - echo "Create Docker image for link component in develop workspace..."
-     - docker build --no-cache -f config/docker/develop.dockerfile .
-     - echo "Porccess finished."
+
+  install:
+    commands:
+      # Node installation
+      - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+      - sudo apt-get install -y nodejs
+      - nodejs --version
+      # Yarn installation
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+      - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+      - sudo apt-get -y update
+      - apt-get install -y yarn
+      # Exito cli instalation
+      - yarn global add exito && yarn cache clean
+  build:
+    commands:
+      - echo "Creating a docker file from exito cli"
+      - exito generate docker dev
+      - echo "Running docker file"
+      - docker build --no-cache -f ./develop-cli.dockerfile .
+      - echo "Proccess finished."
