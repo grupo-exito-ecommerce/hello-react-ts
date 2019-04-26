@@ -8,4 +8,3 @@ react/.scannerwork
 react/*-lock.json
 react/__tests__/__snapshots__/*
 react/__tests__/*/__snapshots__/*
-react/yarn.lock
