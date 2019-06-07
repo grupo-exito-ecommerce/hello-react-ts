@@ -1,0 +1,6 @@
+{
+  "admin.app.hello-react": {
+    "component": "App",
+    "path": "/admin/app/hello-react"
+  }
+}

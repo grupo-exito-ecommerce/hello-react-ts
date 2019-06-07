@@ -1,5 +1,7 @@
-  {
-    "welcome": "Welcome to React",
-    "getstarted": "To get started, edit",
-    "saveTo": "and save to reload."
-  }
+{
+  "welcome": "Welcome to React",
+  "getstarted": "To get started, edit",
+  "saveTo": "and save to reload.",
+  "admin-example.navigation.label-group": "Hello React Example",
+  "admin-example.navigation.label-helloreact": "Hello React"
+}

@@ -1,21 +1,20 @@
 {
   "name": "hello-react",
   "vendor": "exito",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "vtex-version": "0.0.0",
   "builders": {
     "react": "3.x",
-    "store": "0.x",
+    "admin": "0.x",
     "messages": "1.x"
   },
   "title": "Hello React",
-  "description": "App for creating a minimal React setup for VTEX IO",
+  "description": "App for creating a minimal React setup for VTEX IO with Admin configuration",
   "defaultLocale": "es-CO",
   "scripts": {
     "postreleasy": "vtex publish --verbose"
   },
   "dependencies": {
-    "vtex.store": "2.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

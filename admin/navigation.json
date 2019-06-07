@@ -1,0 +1,13 @@
+{
+  "section": "other",
+  "titleId": "admin-example.navigation.label-group",
+  "subSection": "hello",
+  "searchKeyWordsHelpers": "admin-example.navigation.search.kws",
+  "subSectionItems": [
+    {
+      "labelId": "admin-example.navigation.label-helloreact",
+      "path": "/admin/hello-react",
+      "searchKeyWordsHelpers": "admin-example.navigation.details.search.kws"
+    }
+  ]
+}

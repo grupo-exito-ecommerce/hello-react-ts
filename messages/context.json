@@ -1,5 +1,6 @@
 {
     "welcome": "welcome",
     "getstarted": "getstarted",
-    "saveTo": "saveTo"
+    "saveTo": "saveTo",
+    "admin-example.navigation.label": "Example admin"
   }
