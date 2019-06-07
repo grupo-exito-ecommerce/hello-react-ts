@@ -1,3 +1,5 @@
 {
-  "editor.hello-react.title": "editor.hello-react.title"
-}
+    "welcome": "welcome",
+    "getstarted": "getstarted",
+    "saveTo": "saveTo"
+  }
