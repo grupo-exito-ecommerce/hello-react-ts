@@ -1,16 +1,10 @@
 /* eslint-env jest */
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { render } from "@vtex/test-tools/react";
 import App from "../App";
-describe("Hello React component", () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = shallow(<App classes={{}} />);
-  });
-  it("should be rendered", () => {
-    expect(wrapper).toBeDefined();
-  });
-  it("should match snapshot", () => {
-    expect(wrapper).toMatchSnapshot();
-  });
+
+test("should render the example in TypeScript", () => {
+  const { getByText } = render(<App />);
+
+  expect(getByText(/Welcome to React/)).toBeDefined();
 });

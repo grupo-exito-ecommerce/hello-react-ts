@@ -2,37 +2,30 @@
   "name": "hello-react",
   "version": "0.1.0",
   "scripts": {
-    "test": "jest",
-    "coverage": "jest --coverage",
-    "sonar-scanner": "npm run coverage && node_modules/sonar-scanner/bin/sonar-scanner",
-    "upload-sonar-scanner": "node_modules/sonar-scanner/bin/sonar-scanner",
-    "lint": "tsc --noEmit --pretty && tslint -c tslint.json './**/*.ts'"
+    "pretest": "yarn",
+    "test": "vtex-test-tools test",
+    "test:coverage": "vtex-test-tools test --collectCoverage",
+    "sonar-scanner": "npm run test:coverage && node_modules/sonar-scanner/bin/sonar-scanner"
   },
   "author": "EXITO",
   "license": "ISC",
   "dependencies": {
-    "jest-environment-jsdom": "^23.4.0"
+    "classnames": "^2.2.6",
+    "react": "^16.8.6",
+    "react-intl": "^2.9.0"
   },
   "devDependencies": {
-    "@types/node": "^10.11.4",
-    "@types/prop-types": "^15.5.6",
-    "@types/react": "^16.4.14",
-    "babel": "^6.23.0",
-    "babel-jest": "^22.4.3",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react-app": "^3.1.1",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1",
-    "enzyme-to-json": "^3.3.5",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^22.4.3",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
+    "@types/classnames": "^2.2.8",
+    "@types/graphql": "^14.2.0",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.5",
+    "@types/react": "^16.8.19",
+    "@types/react-intl": "^2.3.18",
+    "@vtex/test-tools": "^0.3.2",
+    "apollo-cache-inmemory": "^1.6.1",
+    "apollo-client": "^2.6.1",
+    "coveralls": "^3.0.4",
     "sonar-scanner": "^3.1.0",
-    "tslint": "^5.11.0",
-    "tslint-config-vtex": "^2.0.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.1.1",
-    "typescript-babel-jest": "^1.0.5"
+    "typescript": "^3.5.1"
   }
 }
