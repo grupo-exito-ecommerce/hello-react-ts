@@ -1,7 +1,6 @@
 node_modules/
 .vscode/
 .eslintrc
-!Icon
 react/node_modules/
 react/coverage
 react/.scannerwork
