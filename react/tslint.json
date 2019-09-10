@@ -1,0 +1,16 @@
+{
+  "extends": ["tslint-config-airbnb", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["config/**/*.js", "node_modules/**/*.ts", "coverage/lcov-report/*.js"]
+  },
+  "rules": {
+    "interface-name": [true, "never-prefix"],
+    "jsx-no-lambda": false,
+    "import-name": false,
+    "max-line-length": [true, 110],
+    "variable-name": false,
+    "no-boolean-literal-compare": true,
+    "ter-arrow-parens": [true, "as-needed"],
+    "align": [true, "parameters"]
+  }
+}

@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 import React from 'react'
-import { FormattedMessage } from 'react-intl'
 import styles from './App.css'
+import { FormattedMessage } from "react-intl"
 
 const App = () => {
   return (
