@@ -22,7 +22,7 @@
       "*": [
         "./node_modules/types-exito/src/*"
       ]
-    },
+    }
   },
   "exclude": [
     "node_modules",
