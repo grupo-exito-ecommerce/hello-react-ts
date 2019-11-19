@@ -4657,6 +4657,11 @@ tslint-plugin-prettier@^2.0.1:
     lines-and-columns "^1.1.6"
     tslib "^1.7.1"
 
+tslint-react-hooks@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/tslint-react-hooks/-/tslint-react-hooks-2.2.1.tgz#c52c7df65ee1517b2d6c92bc716e9ef72ccdf208"
+  integrity sha512-bqIg2uZe+quJMfSOGc4OOZ4awo6TP1ejGDGS6IKg2WIrS0XnWfhUJ99i3B8rUpnZhuD4vRSvyYIbXPUmEqQxxQ==
+
 tslint@^5.20.0:
   version "5.20.0"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.20.0.tgz#fac93bfa79568a5a24e7be9cdde5e02b02d00ec1"
@@ -4715,6 +4720,11 @@ type-check@~0.3.2:
   integrity sha1-WITKtRLPHTVeP7eE8wgEsrUg23I=
   dependencies:
     prelude-ls "~1.1.2"
+
+types-exito@^1.0.2-beta.0:
+  version "1.0.2-beta.0"
+  resolved "https://registry.yarnpkg.com/types-exito/-/types-exito-1.0.2-beta.0.tgz#dbf81164c5a50376db54753faa13fb13dd072af1"
+  integrity sha512-PhEEEZIWG/jbXq98lyKH+YU/FFinfI3NUyL912eFuRUH96ojTKyqFOqioVSkJ0iHNh6ge4gM64MbQEMNvyc7Yw==
 
 typescript@^3.3.3333:
   version "3.5.1"

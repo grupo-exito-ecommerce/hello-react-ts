@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import styles from './App.css';
+import styles from './index.css';
 
 const App = () => {
   return (
@@ -17,8 +17,7 @@ const App = () => {
         </h1>
       </header>
       <p className={classnames(styles.AppIntro)}>
-        <FormattedMessage id="getstarted" /> <code>src/App.tsx</code>{' '}
-        <FormattedMessage id="saveTo" />
+        <FormattedMessage id="getstarted" /> <code>src/App.tsx</code> <FormattedMessage id="saveTo" />
       </p>
     </div>
   );

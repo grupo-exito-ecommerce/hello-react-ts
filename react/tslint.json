@@ -1,4 +1,7 @@
 {
+  "extends": [
+    "tslint-react-hooks"
+  ],
   "rulesDirectory": [
     "tslint-config-airbnb",
     "tslint-plugin-prettier",
@@ -19,9 +22,11 @@
           true,
           "always"
         ],
-        "singleQuote": true
+        "singleQuote": true,
+        "printWidth": 110
       }
     ],
+    "react-hooks-nesting": "error",
     "interface-name": [
       true,
       "never-prefix"

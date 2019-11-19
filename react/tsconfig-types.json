@@ -1,0 +1,10 @@
+// tsc -p tsconfig-types.json --outDir "${name}"
+
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "emitDeclarationOnly": true
+  }
+}
