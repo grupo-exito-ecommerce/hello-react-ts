@@ -1,5 +1,5 @@
 {
-  "name": "hello-react",
+  "name": "hello-react-ts",
   "vendor": "exito",
   "version": "0.0.0",
   "vtex-version": "0.0.0",
@@ -10,12 +10,9 @@
   },
   "title": "Hello React",
   "description": "App for creating a minimal React setup for VTEX IO",
-  "defaultLocale": "es-CO",
   "scripts": {
     "postreleasy": "vtex publish --verbose"
   },
-  "dependencies": {
-    "vtex.store": "2.x"
-  },
+  "dependencies": {},
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

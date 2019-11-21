@@ -16,3 +16,9 @@ react/**/__snapshots__/**
 react/**/*.test.js
 react/**/*.test.ts
 react/**/*.test.tsx
+react/index.ts
+react/tsconfig-types.json
+react/__mocks__
+react/__tests__
+react/tslint
+react/sonar-project.properties

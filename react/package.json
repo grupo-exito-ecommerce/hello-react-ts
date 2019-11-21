@@ -5,7 +5,8 @@
     "pretest": "yarn",
     "test": "vtex-test-tools test",
     "test:coverage": "vtex-test-tools test --collectCoverage",
-    "sonar-scanner": "npm run test:coverage && node_modules/sonar-scanner/bin/sonar-scanner"
+    "sonar-scanner": "npm run test:coverage && node_modules/sonar-scanner/bin/sonar-scanner",
+    "get-types": "rm -rf exito.hello-react-ts && tsc -p tsconfig-types.json --outDir exito.hello-react-ts"
   },
   "author": "EXITO",
   "license": "ISC",
@@ -32,7 +33,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react-hooks": "^2.2.1",
-    "types-exito": "^1.0.2-beta.0",
+    "types-exito": "^1.0.2",
     "typescript": "3.5.2"
   }
 }
