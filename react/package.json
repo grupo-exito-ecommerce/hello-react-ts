@@ -33,7 +33,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react-hooks": "^2.2.1",
-    "types-exito": "^1.0.2",
+    "types-exito": "^1.0.3",
     "typescript": "3.5.2"
   }
 }
