@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+types-exito@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/types-exito/-/types-exito-1.0.4.tgz#19ba60205ee867f958a278846a22af2fb4521357"
+  integrity sha512-MfOZoYK6lga+pY2fuM9FhyKgc36hwRj29CPZoJEqlJ48mpk73REG2eR2D6+TyBkoarWF2jNVmp5wtFqlCJGocg==

@@ -3,7 +3,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import styles from './index.css';
 
-const App = () => {
+const Example = () => {
   return (
     <div className={classnames(styles.App)}>
       <header className={classnames(styles.AppHeader)}>
@@ -23,4 +23,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Example;
