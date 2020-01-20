@@ -13,11 +13,11 @@ const Example = () => {
           alt="logo"
         />
         <h1 className={classnames(styles.AppTitle)}>
-          <FormattedMessage id="welcome" />
+          <FormattedMessage id="store/welcome" />
         </h1>
       </header>
       <p className={classnames(styles.AppIntro)}>
-        <FormattedMessage id="getstarted" /> <code>src/App.tsx</code> <FormattedMessage id="saveTo" />
+        <FormattedMessage id="store/getstarted" /> <code>src/App.tsx</code> <FormattedMessage id="store/saveTo" />
       </p>
     </div>
   );

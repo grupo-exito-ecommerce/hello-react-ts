@@ -1,5 +1,5 @@
 {
-    "welcome": "welcome",
-    "getstarted": "getstarted",
-    "saveTo": "saveTo"
+    "store/welcome": "welcome",
+    "store/getstarted": "getstarted",
+    "store/saveTo": "saveTo"
   }

@@ -1,5 +1,5 @@
   {
-    "welcome": "Welcome to React",
-    "getstarted": "To get started, edit",
-    "saveTo": "and save to reload."
+    "store/welcome": "Welcome to React",
+    "store/getstarted": "To get started, edit",
+    "store/saveTo": "and save to reload."
   }

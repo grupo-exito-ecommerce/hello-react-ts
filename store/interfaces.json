@@ -1,6 +1,6 @@
 {
   "hello-react": {
-    "component": "App"
+    "component": "Example"
   },
   "store.hello-react": {
     "required": [
