@@ -1,7 +1,8 @@
 .navigationLinksContainer {
   display: flex;
-  width: 100%;
+  width: fit-content;
   align-items: center;
+  margin: 0 auto;
   justify-content: center;
 }
 
@@ -13,11 +14,16 @@
   align-items: center;
   margin: 0 10px;
   cursor: pointer;
+  position: relative;
 }
 
 .navigationText {
   margin: 0;
   text-transform: capitalize;
+}
+
+.navigationItem:hover .navigationText {
+  text-decoration: underline;
 }
 
 .arrowNavigation {
@@ -28,4 +34,47 @@
 .navigationIcon {
   margin-right: 5px;
   color: #782890;
+}
+
+.subItemsContainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #292b2c;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+.subItemLink {
+  background-color: #fff;
+  color: grey;
+  display: block;
+  width: 100%;
+  padding: 3px 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #292b2c;
+  text-align: inherit;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
+  outline: 0;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.subItemLink:hover {
+  background-color: #5c216e;
+  color: #fff;
+  text-decoration: none;
 }

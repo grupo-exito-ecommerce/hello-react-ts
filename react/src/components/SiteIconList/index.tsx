@@ -7,6 +7,19 @@ interface SiteIconProps {
   icons: IconType[];
 }
 
+export const IconList = [
+  'mpa-minus-icon',
+  'mpa-more-icon',
+  'bnd-logo-pco',
+  'mpa-catalogue-icon',
+  'hpa-minicart',
+  'hpa-travel',
+  'hpa-partners',
+  'hpa-us',
+  'mpa-arrow-left',
+  'mpa-arrow-bottom'
+];
+
 const iconListDefaultProps: SiteIconProps = {
   icons: [
     { id: 'mpa-minus-icon', size: 30 },

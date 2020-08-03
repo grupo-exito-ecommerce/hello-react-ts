@@ -1,5 +1,14 @@
 {
-    "store/welcome": "welcome",
-    "store/getstarted": "getstarted",
-    "store/saveTo": "saveTo"
-  }
+  "admin/category-menu.navigationLinks.title": "admin/category-menu.navigationLinks.title",
+  "admin/category-menu.navigationLinks.sponsored.external": "admin/category-menu.navigationLinks.sponsored.external",
+  "admin/category-menu.navigationLinks.sponsored.name": "admin/category-menu.navigationLinks.sponsored.name",
+  "admin/category-menu.navigationLinks.sponsored.icon": "admin/category-menu.navigationLinks.sponsored.icon",
+  "admin/category-menu.navigationLinks.sponsored.url": "admin/category-menu.navigationLinks.sponsored.url",
+  "admin/category-menu.navigationLinks.links": "admin/category-menu.navigationLinks.links",
+  "admin/category-menu.navigationLinks.links-items": "admin/category-menu.navigationLinks.links-items",
+  "admin/category-menu.navigationLinks.subItems.title": "admin/category-menu.navigationLinks.subItems.title",
+  "admin/category-menu.navigationLinks.subItems": "admin/category-menu.navigationLinks.subItems",
+  "admin/category-menu.vtexIcon.title": "admin/category-menu.vtexIcon.title",
+  "admin/category-menu.vtexIcon.icon": "admin/category-menu.vtexIcon.icon",
+  "admin/category-menu.vtexIcon.size": "admin/category-menu.vtexIcon.size"
+}

@@ -1,4 +1,5 @@
 import { Icon } from 'vtex.store-icons';
+import { IconList } from '../SiteIconList';
 
 export interface IconType {
   id: string;
@@ -18,11 +19,16 @@ const VtexIcon = (props: IconType) => <Icon {...props} />;
 
 VtexIcon.getSchema = () => {
   return {
-    title: 'admin/editor.vtexIcon.title',
+    title: 'admin/category-menu.vtexIcon.title',
     type: 'object',
     properties: {
-      icon: {
-        title: 'admin/editor.vtexIcon.icon',
+      id: {
+        title: 'admin/category-menu.vtexIcon.id',
+        type: 'string',
+        enum: IconList
+      },
+      size: {
+        title: 'admin/category-menu.vtexIcon.size',
         type: 'string'
       }
     }

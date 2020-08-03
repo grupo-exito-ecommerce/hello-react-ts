@@ -1,92 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './index.css';
-import VtexIcon from '../VtexIcon';
-
-interface ItemsType {
-  name: string;
-  url?: string;
-  isExternal?: boolean;
-  icon?: string;
-}
-
-interface Items extends ItemsType {
-  subLinks: ItemsType[];
-}
-
-interface NavigationProps {
-  links: Items[];
-}
-
-const defaultProps: NavigationProps = {
-  links: [
-    {
-      name: 'Nosotros',
-      icon: 'hpa-us',
-      subLinks: [
-        {
-          name: 'Conócenos'
-        },
-        {
-          name: 'Ayuda'
-        },
-        {
-          name: 'Calculadora de puntos'
-        },
-        {
-          name: 'Documentos legales'
-        }
-      ]
-    },
-    {
-      name: 'Tienda Online',
-      icon: 'mpa-catalogue-icon',
-      subLinks: [
-        {
-          name: 'Cátalogo'
-        },
-        {
-          name: 'Bonos'
-        }
-      ]
-    },
-    {
-      name: 'Viajes',
-      icon: 'hpa-travel',
-      subLinks: []
-    },
-    {
-      name: 'Aliados',
-      icon: 'hpa-partners',
-      subLinks: []
-    }
-  ]
-};
+import { NavigationProps } from './model';
+import { defaultPropsNavigation, schema } from './schema';
+import { Items } from './Items';
+import { makeId } from './methods';
 
 const NavigationLinks = (props: NavigationProps) => {
   const { links } = props;
+  const [globalState, setGlobalState] = useState('');
+  const [linkToUse, setLinkToUse] = useState([]);
+  const [closeAll, setCloseAll] = useState(false);
+
+  useEffect(() => {
+    setLinkToUse(
+      links.map(item => {
+        item.id = makeId(10);
+        return item;
+      })
+    );
+
+    var specifiedElement = document.getElementById('navigationItem');
+    document.addEventListener('click', function(event: any) {
+      var isClickInside = specifiedElement.contains(event.target);
+      if (isClickInside) {
+        setCloseAll(false);
+      } else {
+        setCloseAll(true);
+      }
+    });
+  }, [links]);
+
   return (
-    <div className={styles.navigationLinksContainer}>
-      {links.map(item => {
-        return (
-          <div className={styles.navigationItem}>
-            {item.icon && (
-              <div className={styles.navigationIcon}>
-                <VtexIcon {...{ id: item.icon, size: 20 }} />
-              </div>
-            )}
-            <p className={styles.navigationText}>{item.name}</p>
-            {item.subLinks.length > 0 && (
-              <div className={styles.arrowNavigation}>
-                <VtexIcon {...{ id: 'mpa-arrow-bottom', size: 10 }} />
-              </div>
-            )}
-          </div>
-        );
-      })}
+    <div id="navigationItem" className={styles.navigationLinksContainer}>
+      {linkToUse.length
+        ? linkToUse.map(item => {
+            return <Items {...{ item, globalState, setGlobalState, closeAll }} />;
+          })
+        : null}
     </div>
   );
 };
 
-NavigationLinks.defaultProps = defaultProps;
+NavigationLinks.defaultProps = defaultPropsNavigation;
+
+NavigationLinks.getSchema = () => {
+  return schema;
+};
 
 export default NavigationLinks;
