@@ -1,10 +1,17 @@
 {
-  "hello-react": {
-    "component": "Example"
+  "puntoscolombia-login": {
+    "component": "Login"
   },
-  "store.hello-react": {
-    "required": [
-      "hello-react"
-    ]
+  "puntoscolombia-category-menu": {
+    "component": "CategoryMenu"
+  },
+  "puntoscolombia-navigation-links": {
+    "component": "NavigationLinks"
+  },
+  "puntoscolombia-vtex-icon": {
+    "component": "VtexIcon"
+  },
+  "puntoscolombia-icons-list": {
+    "component": "SiteIconList"
   }
 }

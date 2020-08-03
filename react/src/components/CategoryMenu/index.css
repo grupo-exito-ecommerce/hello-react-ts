@@ -1,0 +1,10 @@
+.categoryButton {
+  font-size: 15.2px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 55px 0 10px;
+}
