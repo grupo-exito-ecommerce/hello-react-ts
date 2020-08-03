@@ -1,17 +1,5 @@
 {
-  "puntoscolombia-login": {
-    "component": "Login"
-  },
   "puntoscolombia-category-menu": {
     "component": "CategoryMenu"
-  },
-  "puntoscolombia-navigation-links": {
-    "component": "NavigationLinks"
-  },
-  "puntoscolombia-vtex-icon": {
-    "component": "VtexIcon"
-  },
-  "puntoscolombia-icons-list": {
-    "component": "SiteIconList"
   }
 }

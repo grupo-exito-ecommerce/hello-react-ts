@@ -14,9 +14,7 @@
     "postreleasy": "vtex publish --verbose"
   },
   "dependencies": {
-    "vtex.store": "2.x",
-    "vtex.store-icons": "0.x",
-    "vtex.styleguide": "9.x"
+    "vtex.store": "2.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

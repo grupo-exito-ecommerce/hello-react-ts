@@ -1,14 +1,3 @@
 {
-  "admin/category-menu.navigationLinks.title": "Links de navegación",
-  "admin/category-menu.navigationLinks.sponsored.external": "Usar como link externo",
-  "admin/category-menu.navigationLinks.sponsored.name": "Nombre del link",
-  "admin/category-menu.navigationLinks.sponsored.icon": "Icono del link",
-  "admin/category-menu.navigationLinks.sponsored.url": "Url del link",
-  "admin/category-menu.navigationLinks.links": "Lista de links",
-  "admin/category-menu.navigationLinks.links-items": "Lista de links",
-  "admin/category-menu.navigationLinks.subItems.title": "Lista de sub links",
-  "admin/category-menu.navigationLinks.subItems": "Lista de sub links",
-  "admin/category-menu.vtexIcon.title": "Configuración del icono",
-  "admin/category-menu.vtexIcon.icon": "Nombre del icono",
-  "admin/category-menu.vtexIcon.size": "Tamaño del icono"
+  "admin/category-menu.title": "admin/category-menu.title"
 }
