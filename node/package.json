@@ -5,7 +5,7 @@
     "aws-sdk": "^2.674.0",
     "axios": "^0.19.2",
     "graphql": "~0.13.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "vtex": "^2.97.0"
   },
   "devDependencies": {
