@@ -1,19 +1,23 @@
 {
-  "name": "hello-react",
+  "name": "puntoscolombia.category-menu",
   "version": "0.1.0",
   "scripts": {
     "pretest": "yarn",
     "test": "vtex-test-tools test",
     "test:coverage": "vtex-test-tools test --collectCoverage",
     "sonar-scanner": "npm run test:coverage && node_modules/sonar-scanner/bin/sonar-scanner",
-    "get-types": "rm -rf exito.hello-react-ts && tsc -p tsconfig-types.json --outDir exito.hello-react-ts"
+    "get-types": "rm -rf puntoscolombia.category-menu && tsc -p tsconfig-types.json --outDir puntoscolombia.category-menu"
   },
-  "author": "EXITO",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.8.6",
-    "react-intl": "^2.9.0"
+    "react-intl": "^2.9.0",
+    "react-apollo": "^3.1.5",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.3",
+    "apollo-client": "^2.6.8"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.8",
@@ -29,7 +33,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react-hooks": "^2.2.1",
-    "types-exito": "^1.0.4",
+    "types-puntoscolombia": "^1.0.1",
     "typescript": "3.8.3"
   }
 }

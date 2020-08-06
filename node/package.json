@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@vtex/api": "^3.0.0",
+    "atob": "^2.1.2",
+    "aws-sdk": "^2.674.0",
+    "axios": "^0.19.2",
+    "graphql": "~0.13.2",
+    "lodash": "^4.17.11",
+    "vtex": "^2.97.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/lodash": "^4.14.123",
+    "@types/node": "^10.14.4",
+    "jest": "^24.9.0",
+    "jest-mock-console": "^0.4.2",
+    "ts-jest": "^24.0.1",
+    "tslint": "^5.20.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "3.8.3"
+  },
+  "scripts": {
+    "lint": "tsc --noEmit && tslint -c tslint.json './**/*.ts'",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  }
+}

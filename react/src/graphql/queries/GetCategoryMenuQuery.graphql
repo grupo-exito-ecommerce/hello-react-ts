@@ -1,0 +1,21 @@
+query {
+  getCategoryMenu {
+    status
+    message
+    data {
+      categories {
+        id
+        name
+        href
+        slug
+        icon
+        parent
+        styles
+        showIconLeft
+        showIconRight
+        categoryId
+        enable
+      }
+    }
+  }
+}

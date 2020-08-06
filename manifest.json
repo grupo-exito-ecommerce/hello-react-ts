@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "vtex-version": "0.0.0",
   "builders": {
+    "node": "4.x",
+    "graphql": "1.x",
     "react": "3.x",
     "store": "0.x",
     "messages": "1.x"
@@ -14,7 +16,86 @@
     "postreleasy": "vtex publish --verbose"
   },
   "dependencies": {
-    "vtex.store": "2.x"
+    "vtex.store": "2.x",
+    "puntoscolombia.store-utils": "0.x"
   },
+  "billingOptions": {
+    "free": true,
+    "termsURL": "https://url.to.the/terms"
+  },
+  "settingsSchema": {
+    "title": "Configurations",
+    "type": "object",
+    "properties": {
+      "manageMenu": {
+        "title": "set the configurations for the menu",
+        "description": "",
+        "type": "object",
+        "properties": {
+          "awsLambdaUrl": {
+            "title": "url for use in the process for update the menu",
+            "description": "",
+            "type": "string",
+            "default": "http://sw3qgt22r9.execute-api.us-east-1.amazonaws.com"
+          },
+          "awsGetCategoryEndpoint": {
+            "title": "path for call when need for update the category menu",
+            "description": "",
+            "type": "string",
+            "default": "/prod/api/getCategoryMenu"
+          },
+          "awsS3Endpoint": {
+            "title": "path for call when need for get the category menu",
+            "description": "",
+            "type": "string",
+            "default": "http://vtex-mkp-resources.s3.amazonaws.com/content/menu"
+          },
+          "jsonName": {
+            "title": "end name of the json file from the s3",
+            "description": "",
+            "type": "string",
+            "default": "-category-menu.json"
+          }
+        }
+      }
+    }
+  },
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "sw3qgt22r9.execute-api.us-east-1.amazonaws.com",
+        "path": "*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "vtex-mkp-resources.s3.amazonaws.com",
+        "path": "*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "puntoscolombiaqa.myvtex.com",
+        "path": "*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "puntoscolombia.myvtex.com",
+        "path": "*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "puntoscolombiaio.myvtex.com",
+        "path": "*"
+      }
+    }
+  ],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

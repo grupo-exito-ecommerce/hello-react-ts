@@ -1,0 +1,27 @@
+type CategoryMenuOutput {
+  id: Int!
+  name: String
+  href: String
+  slug: String
+  icon: String
+  parent: Int
+  styles: String
+  showIconLeft: Boolean
+  showIconRight: Boolean
+  categoryId: String
+  enable: Boolean
+}
+
+type Categories {
+  categories: [CategoryMenuOutput!]!
+}
+type ApiResponse {
+  status: Int
+  message: String
+  fileName: String
+  data: Categories
+}
+
+type Query {
+  getCategoryMenu: ApiResponse
+}

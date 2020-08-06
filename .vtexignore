@@ -22,3 +22,5 @@ react/__mocks__
 react/__tests__
 react/tslint
 react/sonar-project.properties
+react/index.ts
+react/puntoscolombia.category-menu

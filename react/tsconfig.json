@@ -6,7 +6,7 @@
     "sourceMap": true,
     "jsx": "preserve",
     "moduleResolution": "node",
-    "typeRoots": ["node_modules/@types", "node_modules/types-exito/src"],
+    "typeRoots": ["node_modules/@types", "node_modules/types-puntoscolombia/src"],
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitReturns": true,
@@ -20,7 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "*": [
-        "./node_modules/types-exito/src/*"
+        "./node_modules/types-puntoscolombia/src/*"
       ]
     }
   },
