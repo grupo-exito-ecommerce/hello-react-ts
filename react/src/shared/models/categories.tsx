@@ -1,4 +1,4 @@
-export interface ICategoryMenu {
+export interface CategoryMenuType {
   id: number;
   name: string;
   href: string;

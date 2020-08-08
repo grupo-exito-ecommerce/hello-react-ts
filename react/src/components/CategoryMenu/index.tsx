@@ -1,46 +1,51 @@
 import React, { useEffect, useState } from 'react';
-import Department from './components/Department';
 import { useLazyQuery } from 'react-apollo';
-import { ICategoryMenu } from '../../../src/shared';
+import { CategoryMenuType, getChildrenItems } from '../../../src/shared';
 import getMenuQuery from '../../graphql/queries/GetCategoryMenuQuery.graphql';
+import Department from './components/Department';
+
+const CATEGORY_ID = 'category-menu-pco';
 
 const CategoryMenu = () => {
   const [getS3Categories, { loading, data, error }] = useLazyQuery(getMenuQuery);
-  const [departments, setDepartments] = useState<ICategoryMenu[]>([]);
-  const [categories, setCategories] = useState<ICategoryMenu[]>([]);
-  const [subcategories, setSubcategories] = useState<ICategoryMenu[]>([]);
+  const [departments, setDepartments] = useState<CategoryMenuType[]>([]);
+  const [categories, setCategories] = useState<CategoryMenuType[]>([]);
+  const [subcategories, setSubcategories] = useState<CategoryMenuType[]>([]);
   const [loadingQuery, setLoadingQuery] = useState(true);
   const [errorOnReadFile, setErrorOnReadFile] = useState(false);
   const [closeMenu, setCloseMenu] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const [showCategoryItem, setShowCategoryItem] = useState<CategoryMenuType>();
 
-  const getDepartments = (megaMenuLevel: ICategoryMenu[]): ICategoryMenu[] => {
+  const getDepartments = (megaMenuLevel: CategoryMenuType[]): CategoryMenuType[] => {
     if (megaMenuLevel) {
-      const deps = megaMenuLevel.filter((value: ICategoryMenu) => value.parent === null);
+      const deps = megaMenuLevel.filter((value: CategoryMenuType) => value.parent === null);
       return deps;
     }
     return [];
   };
 
-  const getSubcategories = (megaMenuLevel: ICategoryMenu[]): ICategoryMenu[] => {
-    const subcategories: ICategoryMenu[] = [];
+  const getSubcategories = (megaMenuLevel: CategoryMenuType[]): CategoryMenuType[] => {
+    const subcategories: CategoryMenuType[] = [];
     const cats = getCategories(megaMenuLevel);
     if (megaMenuLevel) {
-      cats.forEach((category: ICategoryMenu) => {
-        const categoriesChild = megaMenuLevel.filter((value: ICategoryMenu) => value.parent === category.id);
+      cats.forEach((category: CategoryMenuType) => {
+        const categoriesChild = megaMenuLevel.filter(
+          (value: CategoryMenuType) => value.parent === category.id
+        );
         subcategories.push(...categoriesChild);
       });
     }
     return subcategories;
   };
 
-  const getCategories = (megaMenuLevel: ICategoryMenu[]): ICategoryMenu[] => {
-    const categories: ICategoryMenu[] = [];
+  const getCategories = (megaMenuLevel: CategoryMenuType[]): CategoryMenuType[] => {
+    const categories: CategoryMenuType[] = [];
     const deps = getDepartments(megaMenuLevel);
     if (megaMenuLevel) {
       deps.forEach(department => {
         const departmentChild = megaMenuLevel.filter(
-          (value: ICategoryMenu) => value.parent === department.id
+          (value: CategoryMenuType) => value.parent === department.id
         );
         categories.push(...departmentChild);
       });
@@ -49,7 +54,7 @@ const CategoryMenu = () => {
   };
 
   const addEventListenerOnClick = () => {
-    var specifiedElement = document.getElementById('category-menu-pco');
+    var specifiedElement = document.getElementById(CATEGORY_ID);
     document.addEventListener('click', function(event: any) {
       var isClickInside = specifiedElement.contains(event.target);
       if (isClickInside) {
@@ -83,9 +88,10 @@ const CategoryMenu = () => {
         setLoadingQuery(false);
         const megaMenu = data.getCategoryMenu.data.categories;
         const currentDepartments = getDepartments(megaMenu);
-        setDepartments(currentDepartments);
+        setDepartments(getChildrenItems(currentDepartments, null));
         setCategories(getCategories(megaMenu));
         setSubcategories(getSubcategories(megaMenu));
+        setShowCategoryItem(currentDepartments[0]);
       } else {
         setLoadingQuery(false);
         setLoadingQuery(false);
@@ -98,9 +104,6 @@ const CategoryMenu = () => {
   }, []);
 
   useEffect(() => {
-    console.log(departments);
-    console.log(categories);
-    console.log(subcategories);
     if (departments.length) {
       addEventListenerOnClick();
     }
@@ -109,8 +112,19 @@ const CategoryMenu = () => {
   if (errorOnReadFile) return null;
 
   return !loadingQuery ? (
-    <div id="category-menu-pco">
-      <Department {...{ departments, subcategories, categories, handlerClickMenu, openMenu }} />
+    <div id={CATEGORY_ID}>
+      <Department
+        {...{
+          departments,
+          subcategories,
+          categories,
+          handlerClickMenu,
+          openMenu,
+          setShowCategoryItem,
+          showCategoryItem,
+          setCloseMenu
+        }}
+      />
     </div>
   ) : null;
 };
