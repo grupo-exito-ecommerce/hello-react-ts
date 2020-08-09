@@ -11,3 +11,8 @@ export interface CategoryMenuType {
   categoryId: string | null;
   enable: boolean | null;
 }
+
+export interface SubMenuType {
+  parent: CategoryMenuType;
+  children: CategoryMenuType[];
+}

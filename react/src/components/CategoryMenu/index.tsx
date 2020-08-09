@@ -1,21 +1,44 @@
+import pcoHooks from 'puntoscolombia.store-utils/useWidth';
 import React, { useEffect, useState } from 'react';
 import { useLazyQuery } from 'react-apollo';
-import { CategoryMenuType, getChildrenItems } from '../../../src/shared';
+import { Spinner } from 'vtex.styleguide';
+import { CategoryMenuType, getChildrenItems, SubMenuType } from '../../../src/shared';
 import getMenuQuery from '../../graphql/queries/GetCategoryMenuQuery.graphql';
-import Department from './components/Department';
+import Mobile from './components/Mobile';
+import Web from './components/Web';
 
 const CATEGORY_ID = 'category-menu-pco';
 
 const CategoryMenu = () => {
+  const width = pcoHooks.useWidth();
+  const isMobile = pcoHooks.contains(width, ['xs', 'sm']);
+
   const [getS3Categories, { loading, data, error }] = useLazyQuery(getMenuQuery);
   const [departments, setDepartments] = useState<CategoryMenuType[]>([]);
   const [categories, setCategories] = useState<CategoryMenuType[]>([]);
   const [subcategories, setSubcategories] = useState<CategoryMenuType[]>([]);
+  const [allCategoriesChild, setAllCategoriesChild] = useState<CategoryMenuType[]>([]);
   const [loadingQuery, setLoadingQuery] = useState(true);
   const [errorOnReadFile, setErrorOnReadFile] = useState(false);
   const [closeMenu, setCloseMenu] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [showCategoryItem, setShowCategoryItem] = useState<CategoryMenuType>();
+  const [subMenuCategories, setSubMenuCategories] = useState<SubMenuType[]>([]);
+
+  const handleClickMenuMobile = (item: CategoryMenuType) => {
+    let subMenuItems = Object.assign([], subMenuCategories);
+    subMenuItems.push({
+      parent: item,
+      children: getChildrenItems(allCategoriesChild, item.id)
+    });
+    setSubMenuCategories(subMenuItems);
+  };
+
+  const removeSubMenuCategories = (index: number) => {
+    let subMenuItems = Object.assign([], subMenuCategories);
+    subMenuItems.splice(index, 1);
+    setSubMenuCategories(subMenuItems);
+  };
 
   const getDepartments = (megaMenuLevel: CategoryMenuType[]): CategoryMenuType[] => {
     if (megaMenuLevel) {
@@ -54,13 +77,15 @@ const CategoryMenu = () => {
   };
 
   const addEventListenerOnClick = () => {
-    var specifiedElement = document.getElementById(CATEGORY_ID);
     document.addEventListener('click', function(event: any) {
-      var isClickInside = specifiedElement.contains(event.target);
-      if (isClickInside) {
-        setCloseMenu(false);
-      } else {
-        setCloseMenu(true);
+      var specifiedElement = document.getElementById(CATEGORY_ID);
+      if (specifiedElement) {
+        var isClickInside = specifiedElement.contains(event.target);
+        if (isClickInside) {
+          setCloseMenu(false);
+        } else {
+          setCloseMenu(true);
+        }
       }
     });
   };
@@ -104,21 +129,57 @@ const CategoryMenu = () => {
   }, []);
 
   useEffect(() => {
-    if (departments.length) {
+    if (isMobile && departments.length <= 0) {
+      handlerClickMenu();
+    }
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (departments.length && !isMobile) {
       addEventListenerOnClick();
     }
+    let allCategories: CategoryMenuType[] = [];
+    allCategories.push.apply(allCategories, categories);
+    allCategories.push.apply(allCategories, subcategories);
+    setAllCategoriesChild(allCategories);
   }, [departments, categories, subcategories]);
 
   if (errorOnReadFile) return null;
 
-  return !loadingQuery ? (
+  if (loadingQuery)
+    return (
+      <div className="h-100 w-100 flex justify-center">
+        <Spinner />
+      </div>
+    );
+
+  return isMobile ? (
+    <Mobile
+      {...{
+        departments,
+        subcategories,
+        removeSubMenuCategories,
+        categories,
+        handlerClickMenu,
+        openMenu,
+        allCategoriesChild,
+        setShowCategoryItem,
+        isMobile,
+        showCategoryItem,
+        setCloseMenu,
+        handleClickMenuMobile,
+        subMenuCategories
+      }}
+    />
+  ) : (
     <div id={CATEGORY_ID}>
-      <Department
+      <Web
         {...{
           departments,
           subcategories,
           categories,
           handlerClickMenu,
+          isMobile,
           openMenu,
           setShowCategoryItem,
           showCategoryItem,
@@ -126,7 +187,7 @@ const CategoryMenu = () => {
         }}
       />
     </div>
-  ) : null;
+  );
 };
 
 export default CategoryMenu;

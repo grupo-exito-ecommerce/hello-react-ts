@@ -4849,10 +4849,10 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-types-puntoscolombia@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/types-puntoscolombia/-/types-puntoscolombia-1.0.1.tgz#d8f9c1154ad31f9a9beadd17af31208f4acfac30"
-  integrity sha512-fnLXr9CY2b6iqLBUBnrM64Of/T3l4yQf3yD8+LGYZDDDxceYqdj9xbRjYEajGJZzB1YfgYoOgJqYrtW1d4xb2w==
+types-puntoscolombia@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/types-puntoscolombia/-/types-puntoscolombia-1.0.6.tgz#20f9d5c88550c10ca7ed91c5a84a531a54e83be2"
+  integrity sha512-L3OGC82UjgVjG6rVJ4Z5Ipbj62+I/LiyjlSpUCFnbiqIwNHWrMorpH58PPXAbbkZs6HOoE5zyFgfDTeM8qRZYw==
 
 typescript@3.8.3:
   version "3.8.3"

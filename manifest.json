@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "vtex.store": "2.x",
-    "puntoscolombia.store-utils": "0.x"
+    "puntoscolombia.store-utils": "0.x",
+    "vtex.store-drawer": "0.x",
+    "vtex.styleguide": "9.x"
   },
   "billingOptions": {
     "free": true,

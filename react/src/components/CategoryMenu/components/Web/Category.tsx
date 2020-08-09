@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '../index.css';
-import { CategoryMenuType, getChildrenItems } from '../../../shared';
+import { CategoryMenuType, getChildrenItems } from '../../../../shared';
+import styles from '../../index.css';
 import SubCategory from './SubCategory';
 
 interface CategoryProps {
@@ -11,10 +11,9 @@ interface CategoryProps {
 }
 
 const Category = (props: CategoryProps) => {
-  const { departments, department, categories, subcategories } = props;
-  const heightContent = departments.length >= 10 ? 460 : 30 * departments.length;
+  const { department, categories, subcategories } = props;
   return (
-    <div className={styles.categoryContent} style={{ maxHeight: `${heightContent}px` }}>
+    <div className={styles.categoryContent}>
       <a href={department.href} className={styles.categoryContentTitle}>
         {department.name}
       </a>

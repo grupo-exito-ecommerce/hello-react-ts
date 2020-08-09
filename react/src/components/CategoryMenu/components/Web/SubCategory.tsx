@@ -1,7 +1,6 @@
 import React from 'react';
-import styles from '../index.css';
-
-import { CategoryMenuType } from '../../../shared';
+import { CategoryMenuType } from '../../../../shared';
+import styles from '../../index.css';
 
 interface SubCategoryProps {
   subcategories: CategoryMenuType[];

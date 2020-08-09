@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '../index.css';
-import { CategoryMenuType, getChildrenItems } from '../../../../src/shared';
-import VtexIcon from 'puntoscolombia.store-utils/VtexIcon';
+import { CategoryMenuType, getChildrenItems } from '../../../../shared';
+import styles from '../../index.css';
 import Category from './Category';
+import CategoryButton from '../CategoryButton';
 
 interface Props {
   categories: CategoryMenuType[];
@@ -11,17 +11,19 @@ interface Props {
   subcategories: CategoryMenuType[];
   handlerClickMenu: () => void;
   openMenu: boolean;
+  isMobile: boolean;
   setShowCategoryItem: React.Dispatch<React.SetStateAction<CategoryMenuType>>;
   showCategoryItem: CategoryMenuType;
 }
 
-const Department = (props: Props) => {
+const Web = (props: Props) => {
   const {
     departments,
     handlerClickMenu,
     openMenu,
     setShowCategoryItem,
     showCategoryItem,
+    isMobile,
     categories,
     subcategories,
     setCloseMenu
@@ -30,15 +32,7 @@ const Department = (props: Props) => {
 
   return (
     <div className={styles.categoryContainer}>
-      <div className={styles.categoryButton} onClick={() => handlerClickMenu()}>
-        <div className={styles.categoryButtonIcon}>
-          <VtexIcon id="hpa-menu-pco" size={23} />
-        </div>
-        <div className={styles.categoryButtonText}>
-          <div>Compra por</div>
-          <div>Categorías</div>
-        </div>
-      </div>
+      <CategoryButton {...{ handlerClickMenu, isMobile }} />
       {departments.length ? (
         <div
           onMouseLeave={() => setCloseMenu(true)}
@@ -86,4 +80,4 @@ const Department = (props: Props) => {
   );
 };
 
-export default Department;
+export default Web;
