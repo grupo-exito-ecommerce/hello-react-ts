@@ -1,15 +1,17 @@
 import pcoHooks from 'puntoscolombia.store-utils/useWidth';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 import { useLazyQuery } from 'react-apollo';
 import { Spinner } from 'vtex.styleguide';
 import { CategoryMenuType, getChildrenItems, SubMenuType } from '../../../src/shared';
 import getMenuQuery from '../../graphql/queries/GetCategoryMenuQuery.graphql';
 import Mobile from './components/Mobile';
 import Web from './components/Web';
+import DrawerWrapper from './components/DrawerWrapper';
 
 const CATEGORY_ID = 'category-menu-pco';
 
-const CategoryMenu = () => {
+const CategoryMenu: FC = props => {
+  const { children } = props;
   const width = pcoHooks.useWidth();
   const isMobile = pcoHooks.contains(width, ['xs', 'sm']);
 
@@ -90,9 +92,13 @@ const CategoryMenu = () => {
     });
   };
 
-  const handlerClickMenu = () => {
-    const state = !openMenu;
-    setOpenMenu(state);
+  const handlerClickMenu = (defaultState?: boolean) => {
+    if (defaultState == null) {
+      const state = !openMenu;
+      setOpenMenu(state);
+    } else {
+      setOpenMenu(defaultState);
+    }
   };
 
   useEffect(() => {
@@ -128,11 +134,11 @@ const CategoryMenu = () => {
     getS3Categories();
   }, []);
 
-  useEffect(() => {
-    if (isMobile && departments.length <= 0) {
-      handlerClickMenu();
-    }
-  }, [isMobile]);
+  // useEffect(() => {
+  //   if (isMobile && departments.length <= 0) {
+  //     handlerClickMenu();
+  //   }
+  // }, [isMobile]);
 
   useEffect(() => {
     if (departments.length && !isMobile) {
@@ -154,23 +160,25 @@ const CategoryMenu = () => {
     );
 
   return isMobile ? (
-    <Mobile
-      {...{
-        departments,
-        subcategories,
-        removeSubMenuCategories,
-        categories,
-        handlerClickMenu,
-        openMenu,
-        allCategoriesChild,
-        setShowCategoryItem,
-        isMobile,
-        showCategoryItem,
-        setCloseMenu,
-        handleClickMenuMobile,
-        subMenuCategories
-      }}
-    />
+    <DrawerWrapper {...{ isMobile, handlerClickMenu, header: children ? children[0] : <React.Fragment /> }}>
+      <Mobile
+        {...{
+          departments,
+          subcategories,
+          removeSubMenuCategories,
+          categories,
+          handlerClickMenu,
+          openMenu,
+          allCategoriesChild,
+          setShowCategoryItem,
+          isMobile,
+          showCategoryItem,
+          setCloseMenu,
+          handleClickMenuMobile,
+          subMenuCategories
+        }}
+      />
+    </DrawerWrapper>
   ) : (
     <div id={CATEGORY_ID}>
       <Web

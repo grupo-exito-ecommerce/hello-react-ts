@@ -314,3 +314,8 @@
   font-size: 13px;
   color: #eb0f70;
 }
+
+.drawerContent {
+  display: flex;
+  flex-direction: column;
+}

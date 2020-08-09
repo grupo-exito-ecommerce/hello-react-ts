@@ -3,7 +3,7 @@ import styles from '../index.css';
 import VtexIcon from 'puntoscolombia.store-utils/VtexIcon';
 
 interface Props {
-  handlerClickMenu?: () => void;
+  handlerClickMenu?: (defaultState?: boolean) => void;
   isMobile: boolean;
 }
 
@@ -12,7 +12,7 @@ const CategoryButton = ({ handlerClickMenu, isMobile }: Props) => {
     return (
       <div
         className={styles.categoryButtonMobile}
-        onClick={() => (handlerClickMenu ? handlerClickMenu() : () => {})}
+        onClick={() => (handlerClickMenu ? handlerClickMenu(true) : () => {})}
       >
         <div className={styles.categoryButtonIcon}>
           <VtexIcon id="hpa-menu-pco" size={23} />

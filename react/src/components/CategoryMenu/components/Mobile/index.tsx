@@ -11,7 +11,7 @@ interface Props {
   departments: CategoryMenuType[];
   setCloseMenu: React.Dispatch<React.SetStateAction<boolean>>;
   subcategories: CategoryMenuType[];
-  handlerClickMenu: () => void;
+  handlerClickMenu: (defaultState?: boolean) => void;
   openMenu: boolean;
   isMobile: boolean;
   setShowCategoryItem: React.Dispatch<React.SetStateAction<CategoryMenuType>>;
@@ -29,13 +29,14 @@ const Mobile = (props: Props) => {
     handleClickMenuMobile,
     subMenuCategories,
     removeSubMenuCategories,
+    handlerClickMenu,
     allCategoriesChild,
     categories
   } = props;
 
   return (
     <div className={styles.drawerContainer}>
-      <CloseDrawer />
+      <CloseDrawer {...{ handlerClickMenu }} />
       {departments.length ? (
         <div
           className={`${styles.categoryDepartmentsContainerMobile} ${

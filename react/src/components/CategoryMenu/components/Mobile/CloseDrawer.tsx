@@ -1,15 +1,22 @@
 import React from 'react';
 import VtexIcon from 'puntoscolombia.store-utils/VtexIcon';
 import { useDrawer } from 'vtex.store-drawer/DrawerContext';
+
 import styles from '../../index.css';
 
-const CloseDrawer = () => {
+interface Props {
+  handlerClickMenu: (defaultState?: boolean) => void;
+}
+
+const CloseDrawer = (props: Props) => {
+  const { handlerClickMenu } = props;
   const { close } = useDrawer();
   return (
     <div className={styles.closeDrawerContainer}>
       <div
         className={styles.closeDrawerButton}
         onClick={() => {
+          handlerClickMenu(false);
           close();
         }}
       >
