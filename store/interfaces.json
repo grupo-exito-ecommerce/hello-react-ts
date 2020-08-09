@@ -2,8 +2,5 @@
   "puntoscolombia-category-menu": {
     "component": "CategoryMenu",
     "composition": "children"
-  },
-  "puntoscolombia-category-menu-button-mobile": {
-    "component": "DrawerCategoryMobile"
   }
 }
