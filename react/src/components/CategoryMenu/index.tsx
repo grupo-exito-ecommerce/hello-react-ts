@@ -134,12 +134,6 @@ const CategoryMenu: FC = props => {
     getS3Categories();
   }, []);
 
-  // useEffect(() => {
-  //   if (isMobile && departments.length <= 0) {
-  //     handlerClickMenu();
-  //   }
-  // }, [isMobile]);
-
   useEffect(() => {
     if (departments.length && !isMobile) {
       addEventListenerOnClick();
