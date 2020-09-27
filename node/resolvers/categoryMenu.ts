@@ -1,8 +1,9 @@
 import { result } from 'lodash';
-import { Context, ICategories } from '../shared';
+import { ApiConfigInput, Context, ICategories } from '../shared';
 
 export const queries = {
-  getCategoryMenu: (_: any, __: any, { clients }: Context) => clients.categoryMenu.getCategoryMenu()
+  getCategoryMenu: (_: any, { config }: { config: ApiConfigInput }, { clients }: Context) =>
+    clients.categoryMenu.getCategoryMenu(config)
 };
 
 export const fieldResolver = {

@@ -1,5 +1,5 @@
-query {
-  getCategoryMenu {
+query($config: ApiConfigInput!) {
+  getCategoryMenu(config: $config) {
     status
     message
     data {

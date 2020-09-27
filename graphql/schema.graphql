@@ -22,6 +22,13 @@ type ApiResponse {
   data: Categories
 }
 
+input ApiConfigInput {
+  awsLambdaUrl: String!
+  awsGetCategoryEndpoint: String!
+  awsS3Endpoint: String!
+  jsonName: String!
+}
+
 type Query {
-  getCategoryMenu: ApiResponse
+  getCategoryMenu(config: ApiConfigInput!): ApiResponse
 }

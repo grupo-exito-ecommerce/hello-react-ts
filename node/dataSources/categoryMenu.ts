@@ -1,5 +1,5 @@
-import { Apps, ExternalClient, InstanceOptions, IOContext } from '@vtex/api';
-import { IApiResponse, ResolverError } from '../shared';
+import { ExternalClient, InstanceOptions, IOContext } from '@vtex/api';
+import { ApiConfigInput, IApiResponse, ResolverError } from '../shared';
 
 export class CategoryMenuDataSource extends ExternalClient {
   constructor(context: IOContext, options?: InstanceOptions) {
@@ -11,16 +11,11 @@ export class CategoryMenuDataSource extends ExternalClient {
     return fileName;
   }
 
-  async getCategoryMenu(): Promise<IApiResponse> {
+  async getCategoryMenu(config: ApiConfigInput): Promise<IApiResponse> {
     try {
-      const apps: Apps = new Apps(this.context);
-      const appId: string = process.env.VTEX_APP_ID || '';
-      console.log(appId);
-      const settings: any = await apps.getAppSettings(appId);
-      const { awsS3Endpoint, jsonName, awsLambdaUrl, awsGetCategoryEndpoint } = settings['manageMenu'];
+      const { awsS3Endpoint, jsonName, awsLambdaUrl, awsGetCategoryEndpoint } = config;
 
       const fileUrl = `${awsS3Endpoint}/${this.resolveFileName(jsonName)}`;
-      console.log(fileUrl);
       const requestUrl = `${awsLambdaUrl}${awsGetCategoryEndpoint}`;
       const data = {
         url: fileUrl
@@ -30,8 +25,7 @@ export class CategoryMenuDataSource extends ExternalClient {
           'X-Vtex-Use-Https': true
         }
       });
-      console.log(response);
-      
+
       return response;
     } catch (err) {
       throw new ResolverError({

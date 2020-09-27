@@ -7,15 +7,25 @@ import getMenuQuery from '../../graphql/queries/GetCategoryMenuQuery.graphql';
 import Mobile from './components/Mobile';
 import Web from './components/Web';
 import DrawerWrapper from './components/DrawerWrapper';
+import { Props } from './CategoryMenuWrapper';
 
 const CATEGORY_ID = 'category-menu-pco';
 
-const CategoryMenu: FC = props => {
-  const { children } = props;
+const CategoryMenu: FC<Props> = props => {
+  const { children, awsGetCategoryEndpoint, awsLambdaUrl, awsS3Endpoint, jsonName } = props;
   const width = pcoHooks.useWidth();
   const isMobile = pcoHooks.contains(width, ['xs', 'sm']);
 
-  const [getS3Categories, { loading, data, error }] = useLazyQuery(getMenuQuery);
+  const [getS3Categories, { loading, data, error }] = useLazyQuery(getMenuQuery, {
+    variables: {
+      config: {
+        awsGetCategoryEndpoint,
+        awsLambdaUrl,
+        awsS3Endpoint,
+        jsonName
+      }
+    }
+  });
   const [departments, setDepartments] = useState<CategoryMenuType[]>([]);
   const [categories, setCategories] = useState<CategoryMenuType[]>([]);
   const [subcategories, setSubcategories] = useState<CategoryMenuType[]>([]);

@@ -37,3 +37,10 @@ export interface ICategoryMenuDataSource {
   getMegaMenu(): ICategory[];
   updateMegaMenu(categories: ICategory[]): string;
 }
+
+export interface ApiConfigInput {
+  awsLambdaUrl: string;
+  awsGetCategoryEndpoint: string;
+  awsS3Endpoint: string;
+  jsonName: string;
+}
