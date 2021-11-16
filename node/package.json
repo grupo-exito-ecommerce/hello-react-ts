@@ -2,7 +2,7 @@
   "dependencies": {
     "@vtex/api": "^3.0.0",
     "atob": "^2.1.2",
-    "aws-sdk": "^2.674.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.19.2",
     "graphql": "~0.13.2",
     "lodash": "^4.17.11",
